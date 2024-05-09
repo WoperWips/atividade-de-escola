@@ -27,16 +27,12 @@ public class aula8 {
                 return;
             }
 
-            if(){
-                
-            }
-
         }
 
         double notaFinal = (somaNotas / somaPesos );
         System.out.println("A nota final e:"  + notaFinal);
 
-
+        
 
         scanner.close();
 
