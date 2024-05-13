@@ -8,7 +8,7 @@ public class Aula9 {
     int quantidadesdeAlunos = scanner.nextInt();
     scanner.nextLine();
     
-    for (int i = 1; i < quantidadesdeAlunos; i++) {
+    for (int i = 1; i <= quantidadesdeAlunos; i++) {
         System.out.print(" Digite o nome do aluno: ");
         String nome = scanner.nextLine();
 
