@@ -8,7 +8,7 @@ public class Aula9 {
     int quantidadesdeAlunos = scanner.nextInt();
     scanner.nextLine();
     
-    for (int i = 0; i < quantidadesdeAlunos; i++) {
+    for (int i = 1; i < quantidadesdeAlunos; i++) {
         System.out.print(" Digite o nome do aluno: ");
         String nome = scanner.nextLine();
 
@@ -20,10 +20,10 @@ public class Aula9 {
         double somapesos = 0;
 
         for (int j = 0; j < quantidadeNotas; j++) {
-            System.out.print(" Digite a nota " + (j + 1) + " : ");
+            System.out.print(" Digite a nota: " );
             double nota = scanner.nextDouble();
 
-            System.out.print("Digite o peso da nota" + (j + i) + " : ");
+            System.out.print("Digite o peso da nota: ");
             double peso = scanner.nextDouble();
 
             somanotas += nota * peso;
