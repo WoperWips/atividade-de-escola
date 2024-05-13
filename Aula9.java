@@ -28,11 +28,12 @@ public class Aula9 {
 
             somanotas += nota * peso;
             somapesos += peso;
-        }
+        
         double mediaFinal = somanotas / somapesos;
 
         System.out.println(" Alunos: " + nome);
         System.out.println(" Média final: " + mediaFinal);
+}
 
         if (mediaFinal >= 0 && mediaFinal <= 2) {
             System.out.println(" Condição: Reprovado ");
