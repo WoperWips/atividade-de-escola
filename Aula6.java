@@ -1,21 +1,19 @@
 import java.util.Scanner;
 
-public class Aula6{
+public class Aula6 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Digite a Nota Minima Necessaria: ");
+        System.out.println("Digite a nota minima necessária: ");
         double notaMinima = scanner.nextDouble();
 
-        System.out.println("Digite a Nota do Aluno: ");
+        System.out.println("Digite a nota do aluno: ");
         double notaAluno = scanner.nextDouble();
-        
-        if (notaAluno < notaMinima);{
-            System.out.printf("A nota do aluno é %, 2f, que é menor que nota minima necessaria./n",notaAluno);
-        }
-    
-        scanner.close();
-        
-        
-    }
 
+        if ( notaAluno < notaMinima) {
+            System.out.println("Aluno Reprovado.");
+        } else {
+            System.out.println("Aluno Aprovado.");
+        }
+        scanner.close();
+    }
 }
