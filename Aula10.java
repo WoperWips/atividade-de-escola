@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -9,7 +8,7 @@ public class Main {
         int numeroDeAlunos = scanner.nextInt();
 
         for (int i = 0; i < numeroDeAlunos; i++) {
-            scanner.nextLine();  // Consumir a nova linha após nextInt()
+            scanner.nextLine();
 
             System.out.print("Digite o nome do aluno: ");
             String nomeDoAluno = scanner.nextLine();
@@ -18,7 +17,6 @@ public class Main {
             double notaMinima = scanner.nextDouble();
 
             double media;
-            boolean notasCorretas;
 
             do {
                 System.out.print("Quantas notas o aluno tem? ");
@@ -42,14 +40,16 @@ public class Main {
                 System.out.println("A média do aluno " + nomeDoAluno + " é: " + media);
 
                 System.out.print("As notas e pesos estão corretos? (s/n): ");
-                char resposta = scanner.next().charAt(0);
-                notasCorretas = (resposta == 's' || resposta == 'S');
+                scanner.nextLine();
+                String resposta = scanner.nextLine();
 
-                if (!notasCorretas) {
+                if (resposta.equalsIgnoreCase("s")) {
+                    break;
+                } else {
                     System.out.println("Digite novamente as notas e pesos.");
                 }
 
-            } while (!notasCorretas);
+            } while (true);
 
             if (media >= notaMinima) {
                 System.out.println("O aluno " + nomeDoAluno + " está aprovado.");
