@@ -5,52 +5,43 @@ public class Aula9 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Quantos alunos terão suas notas calculadas? ");
-        int numAlunos = scanner.nextInt();
-        scanner.nextLine();
+        System.out.print("Quantos alunos você deseja? ");
+        int numeroDeAlunos = scanner.nextInt();
 
-        for (int i = 0; i < numAlunos; i++) {
+        for (int i = 0; i < numeroDeAlunos; i++) {
+            scanner.nextLine();
+
             System.out.print("Digite o nome do aluno: ");
-            String nomeAluno = scanner.nextLine();
+            String nomeDoAluno = scanner.nextLine();
 
-            
-            System.out.print("Quantas notas serão inseridas para " + nomeAluno + "? ");
-            int numNotas = scanner.nextInt();
+            System.out.print("Digite a nota mínima para aprovação: ");
+            double notaMinima = scanner.nextDouble();
 
-            double somaNotas = 0;
-            double somaPesos = 0;
+            System.out.print("Quantas notas o aluno tem? ");
+            int numeroDeNotas = scanner.nextInt();
 
-            for (int j = 0; j < numNotas; j++) {
-                
-                System.out.print("Digite a nota: ");
+            double somaDasNotas = 0;
+            double somaDosPesos = 0;
+
+            for (int j = 0; j < numeroDeNotas; j++) {
+                System.out.print("Digite a nota " + (j + 1) + ": ");
                 double nota = scanner.nextDouble();
 
-                
-                System.out.print("Digite o peso da nota: ");
+                System.out.print("Digite o peso da nota " + (j + 1) + ": ");
                 double peso = scanner.nextDouble();
 
-                
-                somaNotas += nota * peso;
-                somaPesos += peso;
+                somaDasNotas += nota * peso;
+                somaDosPesos += peso;
             }
 
-            
-            double mediaFinal = somaNotas / somaPesos;
+            double media = somaDasNotas / somaDosPesos;
+            System.out.println("A média do aluno " + nomeDoAluno + " é: " + media);
 
-            String condicao;
-            if (mediaFinal >= 0 && mediaFinal <= 2) {
-                condicao = "Reprovado";
-            } else if (mediaFinal > 2 && mediaFinal <= 4.9) {
-                condicao = "Substitutiva";
+            if (media >= notaMinima) {
+                System.out.println("O aluno " + nomeDoAluno + " está aprovado.");
             } else {
-                condicao = "Aprovado";
+                System.out.println("O aluno " + nomeDoAluno + " está reprovado.");
             }
-
-            
-            System.out.println("Nome do aluno: " + nomeAluno);
-            System.out.println("Média final: " + mediaFinal);
-            System.out.println("Condição: " + condicao);
-
         }
 
         scanner.close();
