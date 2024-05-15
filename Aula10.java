@@ -1,64 +1,61 @@
 import java.util.Scanner;
 
-public class Aula10 {
+public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Quantos alunos terão suas notas calculadas? ");
-        int numAlunos = scanner.nextInt();
-        scanner.nextLine();
+        System.out.print("Quantos alunos você deseja cadastrar? ");
+        int numeroDeAlunos = scanner.nextInt();
 
-        for (int i = 0; i < numAlunos; i++) {
-            boolean dadosCorretos;
+        for (int i = 0; i < numeroDeAlunos; i++) {
+            scanner.nextLine();  // Consumir a nova linha após nextInt()
+
+            System.out.print("Digite o nome do aluno: ");
+            String nomeDoAluno = scanner.nextLine();
+
+            System.out.print("Digite a nota mínima para aprovação: ");
+            double notaMinima = scanner.nextDouble();
+
+            double media;
+            boolean notasCorretas;
 
             do {
-                dadosCorretos = true;
-                System.out.print("Digite o nome do aluno: ");
-                String nomeAluno = scanner.nextLine();
+                System.out.print("Quantas notas o aluno tem? ");
+                int numeroDeNotas = scanner.nextInt();
 
-                System.out.print("Quantas notas serão inseridas para " + nomeAluno + "? ");
-                int numNotas = scanner.nextInt();
+                double somaDasNotas = 0;
+                double somaDosPesos = 0;
 
-                double somaNotas = 0;
-                double somaPesos = 0;
-
-                for (int j = 0; j < numNotas; j++) {
+                for (int j = 0; j < numeroDeNotas; j++) {
                     System.out.print("Digite a nota " + (j + 1) + ": ");
                     double nota = scanner.nextDouble();
 
                     System.out.print("Digite o peso da nota " + (j + 1) + ": ");
                     double peso = scanner.nextDouble();
 
-                    somaNotas += nota * peso;
-                    somaPesos += peso;
+                    somaDasNotas += nota * peso;
+                    somaDosPesos += peso;
                 }
 
-                double mediaFinal = somaNotas / somaPesos;
-                
-                String condicao;
-                if (mediaFinal >= 0 && mediaFinal <= 2) {
-                    condicao = "Reprovado";
-                } else if (mediaFinal > 2 && mediaFinal <= 4.9) {
-                    condicao = "Substitutiva";
-                } else {
-                    condicao = "Aprovado";
+                media = somaDasNotas / somaDosPesos;
+                System.out.println("A média do aluno " + nomeDoAluno + " é: " + media);
+
+                System.out.print("As notas e pesos estão corretos? (s/n): ");
+                char resposta = scanner.next().charAt(0);
+                notasCorretas = (resposta == 's' || resposta == 'S');
+
+                if (!notasCorretas) {
+                    System.out.println("Digite novamente as notas e pesos.");
                 }
 
-                System.out.println("Nome do aluno: " + nomeAluno);
-                System.out.println("Média final: " + mediaFinal);
-                System.out.println("Condição: " + condicao);
+            } while (!notasCorretas);
 
-                scanner.nextLine();
-
-                System.out.print("Deseja reinserir os dados para este aluno? (s/n): ");
-                String resposta = scanner.nextLine();
-
-                if (resposta.equalsIgnoreCase("s")) {
-                    dadosCorretos = false;
-                }
-
-            } while (!dadosCorretos);
+            if (media >= notaMinima) {
+                System.out.println("O aluno " + nomeDoAluno + " está aprovado.");
+            } else {
+                System.out.println("O aluno " + nomeDoAluno + " está reprovado.");
+            }
         }
 
         scanner.close();
