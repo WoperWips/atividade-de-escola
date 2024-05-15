@@ -1,22 +1,22 @@
 import java.util.Scanner;
 
-public class Aula7 {
+public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Digite a nota minima necessária: ");
-        double notaMinima = scanner.nextDouble();
 
         System.out.print("Digite a nota do aluno: ");
-        double notaAluno = scanner.nextDouble();
+        double nota = scanner.nextDouble();
 
-        if ( notaAluno < notaMinima) {
-            System.out.printf("Aluno Reprovado.\n",notaAluno);
-
-        } else if (notaAluno >= notaMinima && notaAluno <= 4.9) {
-            System.out.printf("Aluno precisa fazer a substitutiva.\n",notaAluno);
+        if (nota >= 0 && nota <= 2) {
+            System.out.println("Aluno está reprovado.");
+        } else if (nota > 2 && nota <= 4.9) {
+            System.out.println("Aluno precisa fazer substitutiva.");
+        } else if (nota > 4.9) {
+            System.out.println("Aluno está aprovado.");
         } else {
-            System.out.printf("Aluno Aprovado.\n",notaAluno);
+            System.out.println("Nota inválida. Por favor, digite uma nota entre 0 e 10.");
         }
+
         scanner.close();
     }
 }
