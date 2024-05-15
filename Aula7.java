@@ -4,10 +4,10 @@ public class Aula7 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         
-        System.out.print("Qual é a média mínima: ");
+        System.out.println("Qual é a média mínima: ");
         double mediaMinima = scanner.nextDouble();
 
-        System.out.print("Digite a nota do aluno: ");
+        System.out.println("Digite a nota do aluno: ");
         double nota = scanner.nextDouble();
 
         if (nota >= 0 && nota < mediaMinima) {
