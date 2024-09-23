@@ -1,21 +1,20 @@
 import java.util.Scanner;
+    Public class Produto{
+        private String nome;
+        private double precoCusto;
+        private double precoVenda;
+        private double dataFabricacao;
+        private double dataValidade;
 
-public class Aula6{
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Digite a Nota Minima Necessaria: ");
-        double notaMinima = scanner.nextDouble();
-
-        System.out.println("Digite a Nota do Aluno: ");
-        double notaAluno = scanner.nextDouble();
-        
-        if (notaAluno < notaMinima);{
-            System.out.printf("A nota do aluno é %, 2f, que é menor que nota minima necessaria./n",notaAluno);
+        public Produto(String nome, double precoCusto, doubleVenda, doubledataFabricacao, doubledataValidade){
+            this.nome = nome;
+            this.precoCusto = precoCusto;
+            this.precoVenda = precoVenda;
+            this.dataFabricacao = dataFabricacao;
+            this.dataValidade = dataValidade;
         }
-    
-        scanner.close();
-        
-        
     }
-
-}
+    Public String getNome();{
+        return nome;
+    }
+    Public getPrecoCusto
